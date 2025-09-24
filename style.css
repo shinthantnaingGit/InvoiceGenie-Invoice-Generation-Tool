@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Padauk:wght@400;700&display=swap");
+@import "./node_modules/sweetalert2/dist/sweetalert2.min.css";
+@import "./node_modules/animate.css/animate.min.css";
+@import "tailwindcss";
+
+/* Custom font families */
+.font-family-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.font-family-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-family-padauk {
+  font-family: "Padauk", sans-serif;
+}
+
+/* Custom container utility */
+.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.swal2-popup {
+  @apply bg-white rounded-lg shadow-lg p-2 opacity-95;
+}
+.swal2-title {
+  @apply text-3xl font-bold text-gray-800;
+  font-family: "Montserrat", sans-serif;
+}
+
+.swal2-confirm {
+  @apply bg-blue-600 text-white font-bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Scrollbar styles */
+:root {
+  --scrollbar-track-bg: #e2e8f0;
+  --scrollbar-thumb-bg: #94a3b8;
+  --scrollbar-thumb-hover-bg: #64748b;
+}
+
+/* Prevent sidebar flickering on page load */
+#manageInventorySideBar {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ensure sidebar is hidden by default */
+#manageInventorySideBar.translate-x-full {
+  transform: translateX(100%);
+}
+
+/* Show sidebar when translate-x-full class is removed */
+#manageInventorySideBar:not(.translate-x-full) {
+  transform: translateX(0);
+}
+
+body {
+  background-color: #f3f4f6; /* gray-100 */
+  color: #111827; /* gray-900 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+/* Prevent header elements from flickering on page load */
+
+/* Mobile icon - show on all screens */
+.mobile-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+/* Company name styling */
+h1.text-2xl {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+/* Adjust header padding for mobile */
+@media (max-width: 640px) {
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Ensure proper spacing between mobile icon and buttons */
+  header .flex.items-center.space-x-4 {
+    gap: 0.5rem;
+  }
+}
+
+/* Custom styles for print, if needed */
+@media print {
+  /* Hide the sidebar and other non-essential elements for printing */
+  #manageInventorySideBar,
+  #openManageInventoryBtn,
+  #checkOutBtn,
+  #themeToggleButton,
+  form button {
+    display: none !important;
+  }
+
+  /* Adjust main content for print */
+  body {
+    background-color: #fff !important;
+    color: #000 !important; /* Ensure text is black on white for printing */
+  }
+  #app {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #fff !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .grid {
+    display: block !important; /* Stack elements for better printing */
+  }
+  .lg\:col-span-2,
+  .lg\:col-span-1 {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+  table,
+  th,
+  td {
+    border-color: #e2e8f0 !important; /* Light border for print table */
+  }
+  .bg-gray-100 {
+    background-color: #f7fafc !important; /* Light background for print table header */
+  }
+  /* Ensure consistent styling for print */
+  html {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+}
+
+/* Custom styles for print, if needed */
+@media print {
+  /* Hide the sidebar and other non-essential elements for printing */
+  #manageInventorySideBar,
+  #openManageInventoryBtn,
+  #checkOutBtn,
+  #themeToggleButton,
+  #invoiceItemCreationg,
+  form button {
+    display: none !important;
+  }
+
+  /* Adjust main content for print */
+  body {
+    background-color: #fff !important;
+    color: #000 !important; /* Ensure text is black on white for printing */
+  }
+  #app {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #fff !important;
+  }
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .grid {
+    display: block !important; /* Stack elements for better printing */
+  }
+  .lg\:col-span-2,
+  .lg\:col-span-1 {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+  table,
+  th,
+  td {
+    border-color: #e2e8f0 !important; /* Light border for print table */
+  }
+  .bg-gray-100 {
+    background-color: #f7fafc !important; /* Light background for print table header */
+  }
+  /* Ensure consistent styling for print */
+  html {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+}
